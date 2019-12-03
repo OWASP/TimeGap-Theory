@@ -1,0 +1,27 @@
+version: '2'
+services:
+  mysql:
+        image: mysql
+        container_name: mysql
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        environment:
+          - MYSQL_ROOT_PASSWORD=timegaptheory
+          - MYSQL_DATABASE=timegaptheory
+          - MYSQL_USER=timegaptheory
+          - MYSQL_PASSWORD=timegaptheory
+        ports:
+          - "8082:3306"
+  website:
+    container_name: timegaptheory-webapp
+    build:
+      context: ./
+    volumes:
+      - ./timegaptheory:/var/www/html/timegaptheory
+      - ./index.php:/var/www/html/index.php
+    ports:
+      - 80:80
+    depends_on:
+      - mysql
+    environment:
+    - CLEARDB_DATABASE_URL=mysql://timegaptheory:timegaptheory@mysql/timegaptheory?reconnect=true
