@@ -13,11 +13,11 @@ services:
         ports:
           - "8082:3306"
   website:
-    container_name: timegaptheory-webapp
+    container_name: owasp-timegaptheory
     build:
       context: ./
     volumes:
-      - ./timegaptheory:/var/www/html/timegaptheory
+      - ./owasp-timegaptheory:/var/www/html/timegaptheory
       - ./index.php:/var/www/html/index.php
     ports:
       - 80:80
