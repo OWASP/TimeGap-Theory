@@ -19,6 +19,17 @@ An auto-scoring capture-the-flag game focusing on TOCTOU vulnerabilities
 
 ### Run on Docker (free)
 
+Quickest way:
+
+```
+docker pull abhibala/owasp-timegaptheory
+
+cd TimeGap-Theory
+
+docker-compose up -d
+```
+
+
 1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop).
 2. Obtain the [source code](https://github.com/Abhi-M/timegaptheory.git).
 3. Open Terminal and navigate to the TimeGap Theory directory.
