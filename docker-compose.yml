@@ -17,7 +17,7 @@ services:
     build:
       context: ./
     volumes:
-      - ./owasp-timegaptheory:/var/www/html/timegaptheory
+      - ./timegaptheory:/var/www/html/timegaptheory
       - ./index.php:/var/www/html/index.php
     ports:
       - 80:80
