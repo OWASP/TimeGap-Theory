@@ -73,7 +73,7 @@ require_once dirname( __FILE__ ) . '/' . '../../common/config.php';
 
 try {
     $connection = new PDO($dsn, $username, $password, $options);
-    $sql = "DROP TABLE IF EXISTS users; DROP TABLE IF EXISTS tickets; DROP TABLE IF EXISTS ratings;";
+    $sql = "TRUNCATE users; DROP TABLE IF EXISTS tickets; DROP TABLE IF EXISTS ratings;";
     $connection->exec($sql);
 
     echo "Reset completed.";

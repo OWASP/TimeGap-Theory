@@ -93,7 +93,7 @@ try {
         </tr>
     </thead>
     <tbody>
-    <?php if($num_rows >1) {foreach ($result as $row) : ?>
+    <?php if($num_rows >0) {foreach ($result as $row) : ?>
         <tr>
             <td><?php echo escape($row["firstname"]); ?></td>
             <td><?php echo escape($row["email"]); ?></td>
