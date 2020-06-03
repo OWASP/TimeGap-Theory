@@ -65,7 +65,7 @@
                         $statement2->execute();
                         echo '<script>location.reload();</script>';
               }else if(intval($result4[0]["welcomegift"]) == 1){
-                echo "<center><span class=\"tag is-danger\">You did this already</span></center>";
+                echo "<center><span class=\"tag is-danger\">This coupon code has expired</span></center>";
               }
     }
 
