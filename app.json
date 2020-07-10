@@ -1,8 +1,8 @@
 {
-	"name": "OWASP TimeGap Theory Labs",
+	"name": "OWASP TimeGap Theory",
     "description": "A self-deployable capture-the-flag. Focusing on time-of-check to time-of-use vulnerabilities.",
     "repository": "https://github.com/OWASP/TimeGap-Theory",
-    "logo": "https://timegaptheory.com/timegaptheory.png",
+    "logo": "https://raw.githubusercontent.com/OWASP/TimeGap-Theory/master/favicon.png",
     "keywords": ["owasp","php","mysql","ctf"],
 	"addons": ["cleardb:ignite"]
 }
