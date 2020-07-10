@@ -129,8 +129,8 @@ try {
 
 
 <form method="post">
-  Are you sure you want to delete the <br>user <span style='color:red;'> <?php echo escape($result[0]["firstname"]) . "</span><br> with ID: <span style='color:red;'>" . escape($result[0]["id"]) . "</span>?<br>"; ?>
-  <input class="input" type="hidden" name="id" value="<?php echo escape($result[0]["id"]); ?>">
+  Are you sure you want to delete the <br>user <span style='color:red;'> <?php echo escape($user["firstname"]) . "</span><br> with ID: <span style='color:red;'>" . escape($user["id"]) . "</span>?<br>"; ?>
+  <input class="input" type="hidden" name="id" value="<?php echo escape($user["id"]); ?>">
   <input class="button is-text" type="submit" name="submit" value="Submit">
 </form>
 
