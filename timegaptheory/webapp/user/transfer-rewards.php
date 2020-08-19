@@ -2,8 +2,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 require_once dirname( __FILE__ ) . '/' . '../../common/timegaptheorydatabase.php';
-require_once dirname( __FILE__ ) . '/' . '../../common/config.php';
 require_once dirname( __FILE__ ) . '/' . '../../common/common.php';
+require_once dirname( __FILE__ ) . '/' . '../../settings/delay.php'; 
 
 
 if (isset($_POST['submit'])) {

@@ -57,7 +57,7 @@
             <div class="container">
                 <div class="level-left">
                     <div class="level-item"><a class="button is-info" href="manage-users.php">Manage users</a></div>
-                    <div class="level-item"><a class="button is-primary" href="ticket-to-mars.php">Ticket to Mars</a></div>
+                    <div class="level-item"><a class="button is-primary" href="ticket-to-mars.php">Tickets to Mars</a></div>
                     <div class="level-item"><a class="button is-warning" href="create-users.php">Create default users</a></div>
                     <div class="level-item"><a class="button is-danger" href="reset-database.php">Reset database</a></div>
                 </div>

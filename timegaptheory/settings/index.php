@@ -1,13 +1,29 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-require_once dirname( __FILE__ ) . '/' . '../common/config.php';
-require_once dirname( __FILE__ ) . '/' . '../common/common.php';
+require_once dirname( __FILE__ ) . '/' . '../common/timegaptheorydatabase.php';
+require_once dirname( __FILE__ ) . '/' . '../common/common.php'; 
+require_once dirname( __FILE__ ) . '/' . '../settings/delay.php'; 
+
+
+
+
 if (isset($_POST['wait']) && isset($_POST['marswait']) && isset($_POST['maxlogin'])) {
   $config['wait'] = (int)$_POST['wait'];
   $config['marswait'] = (int)$_POST['marswait'];
   $config['maximumloginattempt'] = (int)$_POST['maxlogin'];
-file_put_contents(dirname( __FILE__ ) . '/../common/config.php', '<?php $config = ' . var_export($config, true) . ';');
+
+try {
+  $connection = new PDO("mysql:host=$host", $username, $password, $options);
+  $sql = "use " . $dbname . ";UPDATE `settings` SET `wait`=" . $config['wait'] . ", `marswait`=" . $config['marswait'] . ", `maximumloginattempt`=" . $config['maximumloginattempt'] . " WHERE `id`=1;";
+  $connection->exec($sql);
+  header("Refresh:0");
+} catch(PDOException $error) {
+  echo $sql . "<br>" . $error->getMessage();
+}
+
+
+
 }
 ?>
 <!DOCTYPE html>
@@ -70,7 +86,7 @@ file_put_contents(dirname( __FILE__ ) . '/../common/config.php', '<?php $config 
   <label class="label">Main wait</label>
   <p>Regular database waiting period in seconds</p>
   <div class="control">
-    <input class="input" name="wait" id="email" type="number" value="<?php echo escape($config['wait']); ?>"  style="width:35%;">
+    <input class="input" name="wait" id="email" type="number" value="<?php echo escape($settings['wait']); ?>"  style="width:35%;">
   </div>
 </div>
 <br>
@@ -78,7 +94,7 @@ file_put_contents(dirname( __FILE__ ) . '/../common/config.php', '<?php $config 
     <label class="label">Mars wait</label>
     <p>Database waiting period for ticket to Mars</p>
     <div class="control">
-      <input class="input" name="marswait" id="password" type="number" value="<?php echo escape($config['marswait']); ?>" style="width:35%;">
+      <input class="input" name="marswait" id="password" type="number" value="<?php echo escape($settings['marswait']); ?>" style="width:35%;">
     </div>
   </div>
   <br>
@@ -86,7 +102,7 @@ file_put_contents(dirname( __FILE__ ) . '/../common/config.php', '<?php $config 
     <label class="label">Maximum logins</label>
     <p>Maximum number of login attempt before the account gets locked out</p>
     <div class="control">
-      <input class="input" name="maxlogin" id="password" type="number" value="<?php echo escape($config['maximumloginattempt']); ?>" style="width:35%;">
+      <input class="input" name="maxlogin" id="password" type="number" value="<?php echo escape($settings['maximumloginattempt']); ?>" style="width:35%;">
     </div>
   </div>
 

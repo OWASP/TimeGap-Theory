@@ -1,9 +1,9 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-require_once dirname( __FILE__ ) . '/' . '../../common/config.php';
 require_once dirname( __FILE__ ) . '/' . '../../common/common.php';
 require_once dirname( __FILE__ ) . '/' . '../../common/session.php';
+require_once dirname( __FILE__ ) . '/' . '../../settings/delay.php'; 
 
   if(!isset($_SESSION['login_user'])){
      header("location:../login.php");

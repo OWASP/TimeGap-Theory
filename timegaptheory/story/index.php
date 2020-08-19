@@ -1,14 +1,3 @@
-<?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-require_once dirname( __FILE__ ) . '/' . '../common/config.php';
-if (isset($_POST['wait']) && isset($_POST['marswait']) && isset($_POST['maxlogin'])) {
-  $config['wait'] = (int)$_POST['wait'];
-  $config['marswait'] = (int)$_POST['marswait'];
-  $config['maximumloginattempt'] = (int)$_POST['maxlogin'];
-file_put_contents(dirname( __FILE__ ) . '/../common/config.php', '<?php $config = ' . var_export($config, true) . ';');
-}
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,7 +55,7 @@ file_put_contents(dirname( __FILE__ ) . '/../common/config.php', '<?php $config 
 
           <p>The ACME shopping chain has been seeing a decline in revenue for the past few years. A new CEO, Ms. RockStar, took charge a few months ago. Ms. RockStar wants ACME to get into online business. Getting online is essential for ACME to fight with competitors. The online presence is going to have a rewards program to encourage buyers, well, to buy more.</p>
 
-          <p>Thanks to the declining revenue, board-of-directors are slightly sensitive when it comes to spending money. The board has decided to outsource the entire web application development to the lowest bidder from Duckburg, Freedonia. The development team consists of four recent college graduates. All of them have accounts on StackOverflow. They stood on their promise and came up with the first beta version six months late.</p>
+          <p>Thanks to the declining revenue, board-of-directors are slightly sensitive when it comes to spending money. The board has decided to outsource the entire web application development to the lowest bidder from Bangalore, India. The development team consists of four recent college graduates. All of them have accounts on StackOverflow. They stood on their promise and came up with the first beta version six months late.</p>
 
           <p>Meanwhile, things were not going well on the ACME headquarters in San Jose, USA. One of the board directors, Mr.MoonShine's Facebook account got phished. Mr. MoonShine turned the conference room upside down last time, talking about the importance of "cyber" security. As a result of that, the board has decided to do a security verification of the current web application.</p>
 

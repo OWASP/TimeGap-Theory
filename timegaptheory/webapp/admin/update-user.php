@@ -6,7 +6,7 @@
  *
  */
 require_once dirname( __FILE__ ) . '/' . '../../common/timegaptheorydatabase.php';
-require_once dirname( __FILE__ ) . '/' . '../../common/config.php';
+require_once dirname( __FILE__ ) . '/' . '../../settings/delay.php'; 
 require_once dirname( __FILE__ ) . '/' . '../../common/common.php';
 
 if (isset($_POST['submit'])) {
