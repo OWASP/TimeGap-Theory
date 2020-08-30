@@ -32,7 +32,7 @@ require_once dirname( __FILE__ ) . '/' . '../../settings/delay.php';
     echo "<center><span class=\"tag is-warning\">You have no tickets</span></center>";
   }
 
-  if ($_SERVER['REQUEST_METHOD']) {
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $number = 0;
 
       try  {
